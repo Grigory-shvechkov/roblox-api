@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def home():
+    return "✅ Roblox API is running!", 200
+
 @app.route('/roblox-data', methods=['POST'])
 def roblox_data():
     data = request.get_json()
